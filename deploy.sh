@@ -26,7 +26,6 @@ docker container run \
      -v ./compilar/volumes/app:/opt/app  \
      --name  compilar \
      --hostname compilar \
-     -u $(id -u):$(id -g) \
      logongas/compilar:1.0.0 
 
 
