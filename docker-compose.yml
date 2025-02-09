@@ -8,7 +8,7 @@ services:
     tty: true
     stdin_open: true
     pull_policy: never
-  peliculas_mysql:
+  logongas_mysql:
     image: mariadb:10.0.36
     restart: always
     hostname: logongas_mysql
