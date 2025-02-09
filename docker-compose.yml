@@ -1,0 +1,24 @@
+services:
+  logongas_java:
+    image: logongas/java:1.0.0
+    restart: always
+    hostname: logongas_java
+    ports:
+      - "81:8081"
+    tty: true
+    stdin_open: true
+    pull_policy: never
+  peliculas_mysql:
+    image: mariadb:10.0.36
+    restart: always
+    hostname: logongas_mysql
+    ports:
+      - "3307:3306"
+    tty: true
+    stdin_open: true
+    pull_policy: never
+    environment:
+      - MYSQL_ROOT_PASSWORD=peliculas
+      - MYSQL_DATABASE=peliculas
+      - MYSQL_USER=peliculas
+      - MYSQL_PASSWORD=peliculas
