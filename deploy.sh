@@ -18,7 +18,7 @@ mv ./compilar/build/src/opt/jdk-21.0.6+7 ./compilar/build/src/opt/java
 
 #Crear la imagen logongas/compilar:1.0.0
 docker image rm logongas/compilar:1.0.0
-docker buildx build --tag logongas/compilar:1.0.0 --file ./compilar/build/Dockerfile ./compilar/build/src
+docker build -t logongas/compilar:1.0.0 -f ./compilar/build/Dockerfile ./compilar/build/src
 docker container run \
      -it \
      --rm \
@@ -37,7 +37,7 @@ cp ./compilar/volumes/app/target/Facturas-0.0.1-SNAPSHOT.jar ./java/build/src/op
 
 #Crear la imagen logongas/compilar:1.0.0
 docker image rm logongas/java:1.0.0
-docker buildx build --tag logongas/java:1.0.0 --file ./java/build/Dockerfile ./java/build/src
+docker build -t logongas/java:1.0.0 -f ./java/build/Dockerfile ./java/build/src
 
 
 
