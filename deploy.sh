@@ -27,7 +27,7 @@ docker container run \
      --hostname compilar \
      logongas/compilar:1.0.0 
 
-docker logs compilar
+docker logs compilar 2>&1
 docker container stop compilar
 docker container rm compilar
 
