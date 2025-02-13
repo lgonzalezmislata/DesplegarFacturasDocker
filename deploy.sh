@@ -25,7 +25,7 @@ docker container run \
      -v ./compilar/volumes/app:/opt/app  \
      --name  compilar \
      --hostname compilar \
-     logongas/compilar:1.0.0 
+     logongas/compilar:1.0.0 2>&1
 
 docker logs compilar 2>&1
 docker container stop compilar
