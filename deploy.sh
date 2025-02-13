@@ -20,12 +20,11 @@ mv ./compilar/build/src/opt/jdk-21.0.6+7 ./compilar/build/src/opt/java
 docker image rm logongas/compilar:1.0.0
 docker build -t logongas/compilar:1.0.0 -f ./compilar/build/Dockerfile ./compilar/build/src
 docker container run \
-     -it \
      --pull=never \
      -v ./compilar/volumes/app:/opt/app  \
      --name  compilar \
      --hostname compilar \
-     logongas/compilar:1.0.0 2>&1
+     logongas/compilar:1.0.0
 
 docker logs compilar 2>&1
 docker container stop compilar
