@@ -21,14 +21,15 @@ docker image rm logongas/compilar:1.0.0
 docker build -t logongas/compilar:1.0.0 -f ./compilar/build/Dockerfile ./compilar/build/src
 docker container run \
      -it \
-     --rm \
      --pull=never \
      -v ./compilar/volumes/app:/opt/app  \
      --name  compilar \
      --hostname compilar \
      logongas/compilar:1.0.0 
 
-
+docker logs compilar
+docker container stop compilar
+docker container rm compilar
 
 
 #Datos para crear la imagen logongas/java:1.0.0
